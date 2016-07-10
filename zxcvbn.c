@@ -1635,3 +1635,43 @@ void ZxcvbnFreeInfo(ZxcMatch_t *Info)
         Info = p;
     }
 }
+
+
+/**********************************************************************************
+ **********************************************************************************
+ * Begin node bindings
+ **********************************************************************************
+ *********************************************************************************/
+
+#ifdef NODE_BINDINGS
+
+#include <nan.h>
+
+static void nan_nCk(const Nan::FunctionCallbackInfo<v8::Value>& info) {
+
+  if (info.Length() < 2) {
+    Nan::ThrowTypeError("Wrong number of arguments");
+    return;
+  }
+
+  if (!info[0]->IsNumber() || !info[1]->IsNumber()) {
+    Nan::ThrowTypeError("Wrong arguments");
+    return;
+  }
+
+  int arg0 = info[0]->NumberValue();
+  int arg1 = info[1]->NumberValue();
+  int ans = nCk(arg0,arg1);
+  v8::Local<v8::Number> num = Nan::New(ans);
+
+  info.GetReturnValue().Set(num);
+}
+
+void Init(v8::Local<v8::Object> exports) {
+  exports->Set(Nan::New("nCk").ToLocalChecked(),
+               Nan::New<v8::FunctionTemplate>(nan_nCk)->GetFunction());
+}
+
+NODE_MODULE(scoring, Init)
+
+#endif
