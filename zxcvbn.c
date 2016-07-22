@@ -1667,9 +1667,55 @@ static void nan_nCk(const Nan::FunctionCallbackInfo<v8::Value>& info) {
   info.GetReturnValue().Set(num);
 }
 
+/**********************************************************************************
+ * Try to match password part with the dictionary words
+ * Parameters:
+ *  Result  Pointer head of linked list used to store results
+ *  Passwd  The start of the password
+ *  Start   Where in the password to start attempting to match
+ *  MaxLen  Maximum number characters to consider
+ */
+//static void DictionaryMatch(ZxcMatch_t **Result, const uint8_t *Passwd, int Start, int MaxLen)
+
+static void nan_dictionary_match(const Nan::FunctionCallbackInfo<v8::Value>& info) {
+
+  /*if (info.Length() < 2) {
+    Nan::ThrowTypeError("Wrong number of arguments");
+    return;
+  }
+
+  if (!info[0]->IsNumber() || !info[1]->IsNumber()) {
+    Nan::ThrowTypeError("Wrong arguments");
+    return;
+  }*/
+
+  /*int arg0 = info[0]->NumberValue();
+  int arg1 = info[1]->NumberValue();
+  int ans = nCk(arg0,arg1);
+  v8::Local<v8::Number> num = Nan::New(ans);*/
+
+  if (info.Length() > 0) {
+    if (info[0]->IsString()) {
+      Nan::Utf8String *str;
+      str = new Nan::Utf8String(info[0]);
+      //v8::String::Utf8Value str(info[0]->ToString());
+      printf("(cc)>>>> qmn [%s].\n", *str);
+    }
+  }
+
+  v8::Local<v8::Number> num = Nan::New(0);
+
+  info.GetReturnValue().Set(num);
+}
+
+
+
 void Init(v8::Local<v8::Object> exports) {
   exports->Set(Nan::New("nCk").ToLocalChecked(),
                Nan::New<v8::FunctionTemplate>(nan_nCk)->GetFunction());
+  exports->Set(Nan::New("dictionary_match").ToLocalChecked(),
+               Nan::New<v8::FunctionTemplate>(nan_dictionary_match)->GetFunction());
+
 }
 
 NODE_MODULE(scoring, Init)
