@@ -22,3 +22,5 @@ libzxcvbn_inline_1_0_la_SOURCES = zxcvbn.c dict-src.h zxcvbn.h
 include_HEADERS = zxcvbn.h
 
 zxcvbn_check_LDADD = $(lib_LTLIBRARIES)
+
+pkgconfig_DATA = libzxcvbn.pc
