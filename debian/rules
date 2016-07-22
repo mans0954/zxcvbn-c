@@ -15,7 +15,7 @@
 
 
 %:
-	dh $@  --with dh-autoreconf
+	dh $@  --with autoreconf
 
 
 # dh_make generated override targets
