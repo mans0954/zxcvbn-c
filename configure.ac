@@ -7,6 +7,7 @@ AC_CONFIG_AUX_DIR([build-aux])
 AM_INIT_AUTOMAKE([1.11 foreign -Wall -Werror -Wno-extra-portability])
 AC_CONFIG_FILES([Makefile])
 AC_PROG_CC
+AC_PROG_CXX
 LT_INIT
 AC_CHECK_LIB([m],[cos])
 AC_OUTPUT
