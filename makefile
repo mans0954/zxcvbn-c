@@ -1,9 +1,18 @@
-CFLAGS = -O2 -Wall -Wextra -Wdeclaration-after-statement
+CFLAGS = -O2 -fPIC -Wall -Wextra -Wdeclaration-after-statement
 CPPFLAGS = -O2 -Wall -Wextra
 
 WORDS = words-10k-pass.txt words-english.txt words-female.txt words-male.txt words-surname.txt
 
-all: test-file test-inline test-c++inline test-c++file
+all: test-file test-inline test-c++inline test-c++file test-library
+
+test-library: test.c libzxcvbn.so.1.0.1
+	gcc $(CFLAGS) -Wl,-rpath,. -o test-library test.c -L. -lzxcvbn
+
+libzxcvbn.so.1.0.1: zxcvbn-inline.o
+	gcc -shared -Wl,-soname,libzxcvbn.so.1 -o libzxcvbn.so.1.0.1 zxcvbn-inline.o -lm
+	ln -s -f ./libzxcvbn.so.1.0.1 libzxcvbn.so.1
+	ln -s -f ./libzxcvbn.so.1   libzxcvbn.so
+
 
 test-file: test.c zxcvbn-file.o
 	gcc $(CFLAGS) -DUSE_DICT_FILE -o test-file test.c zxcvbn-file.o -lm
@@ -51,10 +60,13 @@ test: test-file test-inline test-c++inline test-c++file testcases.txt
 	./test-c++file -t testcases.txt
 	@echo Testing C++ build, dictionary in executable
 	./test-c++inline -t testcases.txt
+	@echo Testing shared library build
+	./test-library -t testcases.txt
 	@echo Finished
 
 clean:
 	rm -f test-file zxcvbn-file.o test-c++file zxcvbn-c++file.o 
 	rm -f test-inline zxcvbn-inline.o test-c++inline zxcvbn-c++inline.o
 	rm -f dictgen
+	rm -f libzxcvbn.so libzxcvbn.so.1 libzxcvbn.so.1.0.1
 	
