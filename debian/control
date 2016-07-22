@@ -1,0 +1,22 @@
+Source: zxcvbn-c
+Priority: optional
+Maintainer: Christopher Hoskin <christopher.hoskin@gmail.com>
+Build-Depends: debhelper (>=9),autotools-dev
+Standards-Version: 3.9.8
+Section: libs
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Git: git://anonscm.debian.org/collab-maint/zxcvbn-c.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/zxcvbn-c.git
+
+Package: zxcvbn-c-dev
+Section: libdevel
+Architecture: any
+Depends: libzxcvbn (= ${binary:Version}), ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+
+Package: libzxcvbn
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
