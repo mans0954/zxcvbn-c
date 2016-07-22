@@ -12,7 +12,7 @@ dict-crc.h: dictgen $(WORDS)
 BUILT_SOURCES = dict-src.h
 
 bin_PROGRAMS = zxcvbn-check dictgen
-zxcvbn_check_SOURCES = test.c 
+zxcvbn_check_SOURCES = zxcvbn-check.c 
 dictgen_SOURCES = dict-generate.cpp
 dictgen_CXXFLAGS = -std=c++11
 
