@@ -4,19 +4,42 @@ Maintainer: Christopher Hoskin <christopher.hoskin@gmail.com>
 Build-Depends: debhelper (>=9),autotools-dev
 Standards-Version: 3.9.8
 Section: libs
-Homepage: <insert the upstream URL, if relevant>
+Homepage: https://github.com/tsyrogit/zxcvbn-c
 #Vcs-Git: git://anonscm.debian.org/collab-maint/zxcvbn-c.git
 #Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/zxcvbn-c.git
 
-Package: zxcvbn-c-dev
+Package: libzxcvbn-dev
 Section: libdevel
 Architecture: any
 Depends: libzxcvbn (= ${binary:Version}), ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: Development files for the zxcvbn password strength estimation library
+ zxcvbn is a password strength estimator inspired by password crackers. Through 
+ pattern matching and conservative estimation, it recognizes and weighs 30k 
+ common passwords, common names and surnames according to US census data, 
+ popular English words from Wikipedia and US television and movies, and other 
+ common patterns like dates, repeats (aaa), sequences (abcd), keyboard patterns 
+ (qwertyuiop), and l33t speak.
+ .
+ This package contains development files for the libzxcvbn library. 
 
 Package: libzxcvbn
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: password strength estimation library
+ zxcvbn is a password strength estimator inspired by password crackers. Through
+ pattern matching and conservative estimation, it recognizes and weighs 30k
+ common passwords, common names and surnames according to US census data,
+ popular English words from Wikipedia and US television and movies, and other
+ common patterns like dates, repeats (aaa), sequences (abcd), keyboard patterns
+ (qwertyuiop), and l33t speak.
+ .
+ Consider using zxcvbn as an algorithmic alternative to password composition
+ policy — it is more secure, flexible, and usable when sites require a minimal
+ complexity score in place of annoying rules like "passwords must contain three
+ of {lower, upper, numbers, symbols}".
+ .
+ The original coffee script version is available at  
+ https://github.com/dropbox/zxcvbn
+ .
+ An article on the reasons for zxcvbn is at
+ https://tech.dropox.com/2012/04/zxcvbn-realistic-password-strength-estimation
