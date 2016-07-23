@@ -24,3 +24,5 @@ include_HEADERS = zxcvbn.h
 zxcvbn_check_LDADD = $(lib_LTLIBRARIES)
 
 pkgconfig_DATA = libzxcvbn.pc
+
+CLEANFILES = dict-src.h
