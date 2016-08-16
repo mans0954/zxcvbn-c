@@ -1,0 +1,4 @@
+#Not a serious package yet
+libzxcvbn0-dev: no-upstream-changelog
+libzxcvbn0-dev: new-package-should-close-itp-bug
+

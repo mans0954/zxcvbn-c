@@ -8,10 +8,10 @@ Homepage: https://github.com/tsyrogit/zxcvbn-c
 #Vcs-Git: git://anonscm.debian.org/collab-maint/zxcvbn-c.git
 #Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/zxcvbn-c.git
 
-Package: libzxcvbn-dev
+Package: libzxcvbn0-dev
 Section: libdevel
 Architecture: any
-Depends: libzxcvbn (= ${binary:Version}), ${misc:Depends}
+Depends: libzxcvbn0 (= ${binary:Version}), ${misc:Depends}
 Description: Development files for the zxcvbn password strength estimation library
  zxcvbn is a password strength estimator inspired by password crackers. Through 
  pattern matching and conservative estimation, it recognizes and weighs 30k 
@@ -22,7 +22,7 @@ Description: Development files for the zxcvbn password strength estimation libra
  .
  This package contains development files for the libzxcvbn library. 
 
-Package: libzxcvbn
+Package: libzxcvbn0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: password strength estimation library

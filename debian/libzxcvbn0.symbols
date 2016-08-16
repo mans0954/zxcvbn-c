@@ -1,0 +1,3 @@
+libzxcvbn.so.0 libzxcvbn0 #MINVER#
+ ZxcvbnFreeInfo@Base 0.01
+ ZxcvbnMatch@Base 0.01

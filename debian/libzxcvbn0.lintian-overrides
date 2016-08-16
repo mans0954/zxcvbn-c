@@ -1,0 +1,5 @@
+#This is a deliberate mis-spelling
+libzxcvbn0: spelling-error-in-binary usr/lib/x86_64-linux-gnu/libzxcvbn.so.0.0.0 DonT Don't
+#This is just an experiment (for the moment)
+libzxcvbn0: no-upstream-changelog
+libzxcvbn0: new-package-should-close-itp-bug
