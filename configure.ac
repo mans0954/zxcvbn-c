@@ -1,4 +1,14 @@
-AC_INIT([zxcvbn-c],[1.0.0])
+AC_INIT([zxcvbn-c],[0.01])
+dnl = Do next line i.e. a comment
+dnl Library versioning
+dnl We begin with 0:0:0
+dnl Note, the software release number and library version are independent of eachother
+LIB_CURRENT=0
+LIB_REVISION=0
+LIB_AGE=0
+AC_SUBST(LIB_CURRENT)
+AC_SUBST(LIB_REVISION)
+AC_SUBST(LIB_AGE)
 AC_PREREQ([2.68])
 AC_CONFIG_MACRO_DIRS([m4])
 PKG_INSTALLDIR
