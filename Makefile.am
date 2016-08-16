@@ -16,8 +16,8 @@ zxcvbn_check_SOURCES = zxcvbn-check.c
 dictgen_SOURCES = dict-generate.cpp
 dictgen_CXXFLAGS = -std=c++11
 
-lib_LTLIBRARIES = libzxcvbn-inline-1.0.la
-libzxcvbn_inline_1_0_la_SOURCES = zxcvbn.c dict-src.h zxcvbn.h
+lib_LTLIBRARIES = libzxcvbn-1.0.0.la
+libzxcvbn_1_0_0_la_SOURCES = zxcvbn.c dict-src.h zxcvbn.h
 
 include_HEADERS = zxcvbn.h
 

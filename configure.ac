@@ -1,4 +1,4 @@
-AC_INIT([zxcvbn-c],[0.01])
+AC_INIT([zxcvbn-c],[1.0.0])
 AC_PREREQ([2.68])
 AC_CONFIG_MACRO_DIRS([m4])
 PKG_INSTALLDIR
