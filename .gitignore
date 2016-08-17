@@ -18,6 +18,7 @@
 *.i*86
 *.x86_64
 *.hex
+*.pc
 test.cpp
 zxcvbn.cpp
 zxcvbn.dict

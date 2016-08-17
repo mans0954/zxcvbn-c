@@ -8,4 +8,4 @@ Description: password strength estimation
 Version: @PACKAGE_VERSION@
 Libs: -L${libdir} -lzxcvbn
 Cflags: -I${includedir}/zxcvbn.h
-Requires.private: m
+Libs.private: m
